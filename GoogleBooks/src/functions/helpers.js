@@ -9,7 +9,7 @@ export const fetchBooks = async () => {
     headers: { Accept: acceptableHeader },
   });
 
-  const data = await response.json;
+  const data = response.json;
 
   const { books } = data;
 
