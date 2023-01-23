@@ -1,4 +1,4 @@
-import { APIHolder } from "./tempAPIHolder";
+import { APIHolder } from "../../tempAPIHolder.js";
 
 export const fetchBooks = async () => {
   let acceptableHeader = "application/json";
