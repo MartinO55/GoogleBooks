@@ -1,9 +1,8 @@
-import { APIHolder } from "../../tempAPIHolder.js";
+import { returnCorrectURL } from "./tempAPIHolder.js";
 
 export const fetchBooks = async () => {
   let acceptableHeader = "application/json";
-
-  let fetchURL = APIHolder;
+  let fetchURL = returnCorrectURL();
 
   const response = await fetch(fetchURL, {
     headers: { Accept: acceptableHeader },

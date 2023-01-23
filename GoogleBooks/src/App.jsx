@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { fetchBooks } from "../../functions/helpers.js";
-import SearchBar from "../searchBar/SearchBar";
+import { fetchBooks } from "../helpers.js";
+import SearchBar from "./components/searchBar/SearchBar";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       {console.log(fetchBooks())}
 
       {/* TODO: Return Search bar */}
+      <SearchBar />
 
       {/* TODO: Return Cards of Books */}
     </>
