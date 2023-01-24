@@ -1,9 +1,7 @@
-import { returnCorrectURL } from "./tempAPIHolder.js";
-
 export const fetchBooks = async () => {
   let acceptableHeader = "application/json";
-  let fetchURL = returnCorrectURL();
-
+  let fetchURL =
+    "https://www.googleapis.com/books/v1/volumes?q=search-terms&key=AIzaSyCZ15z_YoUnk6OVD-OVBNIMgAIC2XQzz-o";
   const response = await fetch(fetchURL, {
     headers: { Accept: acceptableHeader },
   });
