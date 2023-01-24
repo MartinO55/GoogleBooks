@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 const SearchBar = () => {
-  const [searchBooks, setSearchBooks] = useState("");
+  const [internal, setInternal] = useState("");
 
   // console.log(query);
 
   const handleSubmit = () => {
-    () => onSubmit(searchBooks);
+    () => onSubmit(internal);
   };
 
   return (
@@ -15,8 +15,8 @@ const SearchBar = () => {
 
       <input
         placeholder="search ..."
-        onChange={(event) => setSearchBooks(event.target.value)}
-        value={searchBooks}
+        onChange={(event) => setInternal(event.target.value)}
+        value={internal}
       ></input>
       <button onClick={handleSubmit}>Search</button>
     </>

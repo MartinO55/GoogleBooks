@@ -12,6 +12,7 @@ function App() {
       {/* {console.log(fetchBooks())} */}
 
       {/* TODO: Return Search bar */}
+      {/* So We need a search wrapper that holds the app and card return functions */}
       <SearchBar />
 
       {/* TODO: Return Cards of Books */}
