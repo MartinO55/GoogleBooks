@@ -4,7 +4,7 @@ import SearchBar from "./components/searchBar/SearchBar";
 import Card from "./components/card/Card";
 
 function App() {
-  const [query, setQuery] = useState("");
+  const [searchBooks, setSearchBooks] = useState("");
 
   return (
     <>
@@ -13,7 +13,7 @@ function App() {
 
       {/* TODO: Return Search bar */}
       {/* So We need a search wrapper that holds the app and card return functions */}
-      <SearchBar />
+      <SearchBar value={searchBooks} />
 
       {/* TODO: Return Cards of Books */}
       <Card />

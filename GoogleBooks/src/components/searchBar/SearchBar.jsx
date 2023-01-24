@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const SearchBar = () => {
-  const [internal, setInternal] = useState("");
+const SearchBar = ({ value }) => {
+  const [internal, setInternal] = useState(value);
 
   // console.log(query);
 
