@@ -6,6 +6,11 @@ import Card from "./components/card/Card";
 function App() {
   const [searchBooks, setSearchBooks] = useState("");
 
+  const handleBookSearchChanges = (query) => {
+    setSearchBooks(query);
+    console.log(searchBooks);
+  };
+
   return (
     <>
       {/* TODO: return header */}
@@ -13,10 +18,10 @@ function App() {
 
       {/* TODO: Return Search bar */}
       {/* So We need a search wrapper that holds the app and card return functions */}
-      <SearchBar value={searchBooks} />
+      <SearchBar value={searchBooks} onSubmit={handleBookSearchChanges} />
 
       {/* TODO: Return Cards of Books */}
-      <Card />
+      <Card query={searchBooks} />
     </>
   );
 }

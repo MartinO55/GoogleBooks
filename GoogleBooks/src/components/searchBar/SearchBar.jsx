@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 
-const SearchBar = ({ value }) => {
+const SearchBar = ({ value, onSubmit }) => {
   const [internal, setInternal] = useState(value);
 
   // console.log(query);
 
+  const handleChange = (event) => {
+    setInternal(event.target.value);
+    console.log(internal);
+  };
+
   const handleSubmit = () => {
-    () => onSubmit(internal);
+    onSubmit(internal);
+    console.log(internal);
   };
 
   return (
@@ -15,7 +21,7 @@ const SearchBar = ({ value }) => {
 
       <input
         placeholder="search ..."
-        onChange={(event) => setInternal(event.target.value)}
+        onChange={handleChange}
         value={internal}
       ></input>
       <button onClick={handleSubmit}>Search</button>

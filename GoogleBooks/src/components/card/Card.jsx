@@ -1,14 +1,23 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { fetchBooks } from "../../functions/helpers";
 
-const Card = () => {
+const Card = ({ query }) => {
+  //call fetchbooks in a useffect
   const [books, setBooks] = useState([]);
+  useEffect(() => {
+    setBooks(fetchBooks());
+
+    console.log(books);
+  }, [books]);
+
+  console.log(query);
+
   return (
     <>
-      {books.map((book, index) => (
+      {/* {books.map((book, index) => (
         <p key={index}>{book.title}</p>
-      ))}
+      ))} */}
     </>
   );
 };
