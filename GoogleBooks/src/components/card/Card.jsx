@@ -5,19 +5,39 @@ import { fetchBooks } from "../../functions/helpers";
 const Card = ({ query }) => {
   //call fetchbooks in a useffect
   const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    setBooks(fetchBooks());
+    const wrapper = async () => {
+      setLoading(true);
+      try {
+        const books = await fetchBooks();
+        setBooks(books);
+        console.log(books);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    console.log(books);
-  }, [books]);
-
-  console.log(query);
+    wrapper();
+  }, []);
 
   return (
     <>
-      {/* {books.map((book, index) => (
-        <p key={index}>{book.title}</p>
-      ))} */}
+      <div>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <div>
+            {" "}
+            {books.map((book, index) => (
+              <p key={index}>{book.title}</p>
+            ))}
+          </div>
+        )}
+      </div>
     </>
   );
 };
