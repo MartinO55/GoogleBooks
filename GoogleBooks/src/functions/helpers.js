@@ -1,7 +1,8 @@
-export const fetchBooks = async () => {
+export const fetchBooks = async (query) => {
   let acceptableHeader = "application/json";
   let fetchURL =
-    "https://www.googleapis.com/books/v1/volumes?q=search-terms&key=AIzaSyCZ15z_YoUnk6OVD-OVBNIMgAIC2XQzz-o";
+    //add query to string
+    `https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyCZ15z_YoUnk6OVD-OVBNIMgAIC2XQzz-o`;
   const response = await fetch(fetchURL, {
     headers: { Accept: acceptableHeader },
   });

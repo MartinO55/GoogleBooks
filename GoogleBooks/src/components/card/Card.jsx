@@ -11,7 +11,7 @@ const Card = ({ query }) => {
     const wrapper = async () => {
       setLoading(true);
       try {
-        const books = await fetchBooks();
+        const books = await fetchBooks(query);
         setBooks(books);
         console.log(books);
       } catch (error) {
