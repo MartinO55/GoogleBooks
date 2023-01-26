@@ -2,6 +2,7 @@ import { useState } from "react";
 import { fetchBooks } from "./functions/helpers.js";
 import SearchBar from "./components/searchBar/SearchBar";
 import Card from "./components/card/Card";
+import CardHolder from "./components/CardHolder/CardHolder.jsx";
 
 function App() {
   const [searchBooks, setSearchBooks] = useState("");
@@ -21,7 +22,7 @@ function App() {
       <SearchBar value={searchBooks} onSubmit={handleBookSearchChanges} />
 
       {/* TODO: Return Cards of Books */}
-      <Card query={searchBooks} />
+      <CardHolder query={searchBooks} />
     </>
   );
 }

@@ -1,15 +1,16 @@
 export const fetchBooks = async (query) => {
-  let acceptableHeader = "application/json";
-  let fetchURL =
-    //add query to string
-    `https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyCZ15z_YoUnk6OVD-OVBNIMgAIC2XQzz-o`;
-  const response = await fetch(fetchURL, {
-    headers: { Accept: acceptableHeader },
-  });
+  if (query) {
+    let acceptableHeader = "application/json";
+    let fetchURL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyCZ15z_YoUnk6OVD-OVBNIMgAIC2XQzz-o`;
+    const response = await fetch(fetchURL, {
+      headers: { Accept: acceptableHeader },
+    });
 
-  const data = response.json;
+    const data = await response.json();
 
-  const { books } = data;
+    const { books } = data;
+    console.log(books);
 
-  return books;
+    return books;
+  }
 };
