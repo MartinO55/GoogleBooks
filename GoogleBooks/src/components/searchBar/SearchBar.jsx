@@ -12,12 +12,12 @@ const SearchBar = ({ value, onSubmit }) => {
 
   const handleSubmit = () => {
     onSubmit(internal);
-    console.log(internal);
+    //console.log(internal);
   };
 
   return (
     <>
-      <h2>I would like to be a searchbar</h2>
+      <h2>I *am* a Searchbar</h2>
 
       <input
         placeholder="search ..."

@@ -1,15 +1,15 @@
 import React from "react";
 
-const Card = ({ books }) => {
+const Card = ({ title }) => {
   //console.log(books);
 
-  if (books === undefined) {
+  if (title === undefined) {
     return (
       <>
         <p>loading ...</p>
       </>
     );
-  } else return <>{/* <div>{books.map()}</div> */}</>;
+  } else return <>{<div>{title}</div>}</>;
 };
 
 export default Card;

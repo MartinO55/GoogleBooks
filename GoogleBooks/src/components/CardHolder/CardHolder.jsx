@@ -18,7 +18,7 @@ const CardHolder = ({ query = "" }) => {
         }
         // console.log("books:", books);
         setBooks(response);
-        //console.log("state:", books);
+        console.log("state:", books);
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
@@ -32,7 +32,11 @@ const CardHolder = ({ query = "" }) => {
         ) : books.length === 0 ? (
           <p>No results</p>
         ) : (
-          <div>{<Card books={books} />}</div>
+          <div>
+            {books.map((book) => (
+              <Card title={book.volumeInfo.title} />
+            ))}
+          </div>
         )}
       </div>
     </>
