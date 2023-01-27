@@ -9,12 +9,7 @@ const Card = ({ books }) => {
         <p>loading ...</p>
       </>
     );
-  } else
-    return (
-      <>
-        <div>{}</div>
-      </>
-    );
+  } else return <>{/* <div>{books.map()}</div> */}</>;
 };
 
 export default Card;

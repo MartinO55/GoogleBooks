@@ -13,7 +13,8 @@ const CardHolder = ({ query = "" }) => {
     fetchBooks(query)
       .then((response) => {
         if (!response) {
-          throw new error("could not fetch data");
+          console.log("could not fetch data");
+          return;
         }
         // console.log("books:", books);
         setBooks(response);
