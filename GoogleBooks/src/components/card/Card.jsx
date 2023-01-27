@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ title }) => {
+const Card = ({ title, author, description, image }) => {
   //console.log(books);
 
   if (title === undefined) {
