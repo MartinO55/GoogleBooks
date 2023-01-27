@@ -3,7 +3,7 @@ import Card from "../card/Card";
 import { useState, useEffect } from "react";
 import { fetchBooks } from "../../functions/helpers";
 
-const CardHolder = ({ query }) => {
+const CardHolder = ({ query = "" }) => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   //console.log(books, typeof books);
@@ -11,11 +11,19 @@ const CardHolder = ({ query }) => {
   useEffect(() => {
     setLoading(true);
     fetchBooks(query)
-      .then((books) => setBooks(books))
+      .then((response) => {
+        if (!response) {
+          throw new error("could not fetch data");
+        }
+        console.log("books:", books);
+        setBooks(response);
+        console.log("state:", books);
+      })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   }, [query]);
 
+  console.log(books);
   return (
     <>
       <div>

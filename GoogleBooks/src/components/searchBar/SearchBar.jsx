@@ -7,7 +7,7 @@ const SearchBar = ({ value, onSubmit }) => {
 
   const handleChange = (event) => {
     setInternal(event.target.value);
-    console.log(internal);
+    //console.log(internal);
   };
 
   const handleSubmit = () => {
