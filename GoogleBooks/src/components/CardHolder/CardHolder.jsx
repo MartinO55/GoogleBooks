@@ -33,8 +33,13 @@ const CardHolder = ({ query = "" }) => {
           <p>No results</p>
         ) : (
           <div>
-            {books.map((book) => (
-              <Card title={book.volumeInfo.title} />
+            {books.map((book, key) => (
+              <Card
+                title={book.volumeInfo.title}
+                author={book.volumeInfo.authors} //this is an array
+                description={book.volumeInfo.description}
+                image={book.volumeInfo.imageLinks}
+              />
             ))}
           </div>
         )}

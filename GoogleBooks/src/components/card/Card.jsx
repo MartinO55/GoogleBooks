@@ -9,7 +9,19 @@ const Card = ({ title, author, description, image }) => {
         <p>loading ...</p>
       </>
     );
-  } else return <>{<div>{title}</div>}</>;
+  } else
+    return (
+      <>
+        {
+          <div>
+            <h3>{title}</h3>
+            <p>{author}</p>
+            <p>{description}</p>
+            <img src={image} />
+          </div>
+        }
+      </>
+    );
 };
 
 export default Card;
