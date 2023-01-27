@@ -12,7 +12,6 @@ const Card = ({ books }) => {
   } else
     return (
       <>
-        {console.log(books)}
         <div>{}</div>
       </>
     );

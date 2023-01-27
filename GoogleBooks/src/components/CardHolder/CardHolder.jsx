@@ -15,15 +15,14 @@ const CardHolder = ({ query = "" }) => {
         if (!response) {
           throw new error("could not fetch data");
         }
-        console.log("books:", books);
+        // console.log("books:", books);
         setBooks(response);
-        console.log("state:", books);
+        //console.log("state:", books);
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   }, [query]);
 
-  console.log(books);
   return (
     <>
       <div>
