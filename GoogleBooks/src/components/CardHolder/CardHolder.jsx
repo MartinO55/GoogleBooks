@@ -27,7 +27,13 @@ const CardHolder = ({ query = "" }) => {
   return (
     <>
       <div>
-        {loading ? <p>Loading...</p> : <div>{<Card books={books} />}</div>}
+        {loading ? (
+          <p>Loading...</p>
+        ) : books.length === 0 ? (
+          <p>No results</p>
+        ) : (
+          <div>{<Card books={books} />}</div>
+        )}
       </div>
     </>
   );
