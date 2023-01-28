@@ -3,6 +3,7 @@ import Card from "../card/Card";
 import { useState, useEffect, useRef } from "react";
 import { fetchBooks } from "../../functions/helpers";
 import styles from "./CardHolder.module.scss";
+import coverPlaceHolder from "../../assets/book-cover-placeholder.png";
 
 const CardHolder = ({ query = "" }) => {
   const [books, setBooks] = useState([]);
@@ -43,14 +44,29 @@ const CardHolder = ({ query = "" }) => {
           <div className={styles.CardHolder_loaded}>
             {books.map(
               (book, key) => (
-                console.log("I mapped"),
-                console.log(book.volumeInfo.title),
+                console.log("I mapped", book.volumeInfo.authors),
                 (
                   <Card
-                    title={book.volumeInfo.title}
-                    author={book.volumeInfo.authors.join(", ")} //this is an array, so this just
-                    description={book.volumeInfo.description}
-                    image={book.volumeInfo.imageLinks}
+                    title={
+                      book.volumeInfo.title
+                        ? book.volumeInfo.title
+                        : "No title Available"
+                    }
+                    author={
+                      book.volumeInfo.authors
+                        ? book.volumeInfo.authors.join(", ")
+                        : "No Authors Found"
+                    } //this is an array, so this just
+                    description={
+                      book.volumeInfo.description
+                        ? book.volumeInfo.description
+                        : "No description available"
+                    }
+                    image={
+                      book.volumeInfo.imageLinks
+                        ? book.volumeInfo.imageLinks.smallThumbnail
+                        : coverPlaceHolder
+                    }
                   />
                 )
               )
