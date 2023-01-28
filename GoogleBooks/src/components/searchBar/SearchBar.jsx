@@ -16,15 +16,15 @@ const SearchBar = ({ value, onSubmit }) => {
     <>
       <div className={styles.SearchBar}>
         <h2>I *am* a Searchbar</h2>
-        {/* <div className={styles.SearchBar_holder}> */}
-        <input
-          // className={styles.SearchBar_input}
-          placeholder="search ..."
-          onChange={handleChange}
-          value={internal}
-        ></input>
-        <button onClick={handleSubmit}>Search</button>
-        {/* </div> */}
+        <div className={styles.SearchBar_holder}>
+          <input
+            className={styles.SearchBar_input}
+            placeholder="search ..."
+            onChange={handleChange}
+            value={internal}
+          ></input>
+          <button onClick={handleSubmit}>Search</button>
+        </div>
       </div>
     </>
   );

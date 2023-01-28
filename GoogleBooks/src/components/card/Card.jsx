@@ -17,7 +17,7 @@ const Card = ({ title, author, description, image }) => {
           <div className={styles.Card}>
             <h3>{title}</h3>
             <p>{author}</p>
-            {<p>{description}</p>}
+            <p>{description}</p>
             <img src={image} />
           </div>
         }

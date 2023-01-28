@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./components/header/Header";
 import SearchBar from "./components/searchBar/SearchBar";
+import FontWrapper from "./containers/FontWrapper/FontWrapper";
 
 import CardHolder from "./components/CardHolder/CardHolder.jsx";
 
@@ -13,11 +14,12 @@ function App() {
 
   return (
     <>
-      <Header />
+      <FontWrapper>
+        <Header />
+        <SearchBar value={searchBooks} onSubmit={handleBookSearchChanges} />
 
-      <SearchBar value={searchBooks} onSubmit={handleBookSearchChanges} />
-
-      <CardHolder query={searchBooks} />
+        <CardHolder query={searchBooks} />
+      </FontWrapper>
     </>
   );
 }
