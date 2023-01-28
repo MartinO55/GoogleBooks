@@ -1,3 +1,13 @@
 .SearchBar {
   background-color: blue;
+  margin: 1rem;
+  padding: 1rem;
+
+  .SearchBar_holder {
+    padding: 0.5rem;
+
+    .SearchBar_input {
+      margin: 0.5rem;
+    }
+  }
 }

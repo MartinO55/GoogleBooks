@@ -17,7 +17,7 @@ const CardHolder = ({ query = "" }) => {
           console.log("could not fetch data");
           return;
         }
-        // console.log("books:", books);
+        console.log("books:", books);
         setBooks(response);
         console.log("state:", books);
       })
@@ -35,14 +35,19 @@ const CardHolder = ({ query = "" }) => {
         ) : (
           //didn't realise that this is the div that takes the flexwrap
           <div className={styles.CardHolder_loaded}>
-            {books.map((book, key) => (
-              <Card
-                title={book.volumeInfo.title}
-                author={book.volumeInfo.authors.join(", ")} //this is an array
-                description={book.volumeInfo.description}
-                image={book.volumeInfo.imageLinks}
-              />
-            ))}
+            {books.map(
+              (book, key) => (
+                console.log("I mapped"),
+                (
+                  <Card
+                    title={book.volumeInfo.title}
+                    author={book.volumeInfo.authors.join(", ")} //this is an array, so this just
+                    description={book.volumeInfo.description}
+                    image={book.volumeInfo.imageLinks}
+                  />
+                )
+              )
+            )}
           </div>
         )}
       </div>
