@@ -1,16 +1,18 @@
 import React from "react";
 import Card from "../card/Card";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { fetchBooks } from "../../functions/helpers";
 import styles from "./CardHolder.module.scss";
 
 const CardHolder = ({ query = "" }) => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
-  //console.log(books, typeof books);
+
+  let booksdata = [];
 
   useEffect(() => {
     setLoading(true);
+
     fetchBooks(query)
       .then((response) => {
         if (!response) {
@@ -18,11 +20,15 @@ const CardHolder = ({ query = "" }) => {
           return;
         }
         console.log("books:", books);
-        setBooks(response);
-        console.log("state:", books);
+        booksdata = response;
+        console.log(booksdata);
       })
       .catch((error) => console.log(error))
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setBooks(booksdata);
+        console.log(booksdata);
+        setLoading(false);
+      });
   }, [query]);
 
   return (
@@ -38,6 +44,7 @@ const CardHolder = ({ query = "" }) => {
             {books.map(
               (book, key) => (
                 console.log("I mapped"),
+                console.log(book.volumeInfo.title),
                 (
                   <Card
                     title={book.volumeInfo.title}
