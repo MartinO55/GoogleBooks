@@ -1,30 +1,29 @@
 import React, { useState } from "react";
+import styles from "./SearchBar.module.scss";
 
 const SearchBar = ({ value, onSubmit }) => {
   const [internal, setInternal] = useState(value);
 
-  // console.log(query);
-
   const handleChange = (event) => {
     setInternal(event.target.value);
-    //console.log(internal);
   };
 
   const handleSubmit = () => {
     onSubmit(internal);
-    //console.log(internal);
   };
 
   return (
     <>
-      <h2>I *am* a Searchbar</h2>
+      <div className={styles.SearchBar}>
+        <h2>I *am* a Searchbar</h2>
 
-      <input
-        placeholder="search ..."
-        onChange={handleChange}
-        value={internal}
-      ></input>
-      <button onClick={handleSubmit}>Search</button>
+        <input
+          placeholder="search ..."
+          onChange={handleChange}
+          value={internal}
+        ></input>
+        <button onClick={handleSubmit}>Search</button>
+      </div>
     </>
   );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../card/Card";
 import { useState, useEffect } from "react";
 import { fetchBooks } from "../../functions/helpers";
+import styles from "./CardHolder.module.scss";
 
 const CardHolder = ({ query = "" }) => {
   const [books, setBooks] = useState([]);
@@ -26,13 +27,14 @@ const CardHolder = ({ query = "" }) => {
 
   return (
     <>
-      <div>
+      <div className={styles.CardHolder}>
         {loading ? (
           <p>Loading...</p>
         ) : books.length === 0 ? (
           <p>No results</p>
         ) : (
-          <div>
+          //didn't realise that this is the div that takes the flexwrap
+          <div className={styles.CardHolder_loaded}>
             {books.map((book, key) => (
               <Card
                 title={book.volumeInfo.title}
