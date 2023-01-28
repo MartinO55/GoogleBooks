@@ -15,7 +15,6 @@ const SearchBar = ({ value, onSubmit }) => {
   return (
     <>
       <div className={styles.SearchBar}>
-        <h2>I *am* a Searchbar</h2>
         <div className={styles.SearchBar_holder}>
           <input
             className={styles.SearchBar_input}
