@@ -1,4 +1,4 @@
-@import "../../Styles/_themes.scss";
+@use "../../Styles/_themes.scss" as variable;
 .Header {
   text-align: center;
   margin: 0.5rem;

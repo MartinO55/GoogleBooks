@@ -1,10 +1,10 @@
-@import "../../Styles/_themes.scss"; //it should be @use, not @import; I'm not sure how the re renders in react would interact with the scss imports
+@use "../../Styles/_themes.scss" as variable; //it should be @use, not @import; I'm not sure how the re renders in react would interact with the scss imports
 
 .Card {
   border: 2px solid black;
   margin: 1rem;
   padding: 1rem;
-  background-color: $goldFusion;
+  background-color: variable.$goldFusion;
   max-width: 40%;
   justify-content: center;
 }
