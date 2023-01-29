@@ -8,8 +8,18 @@
   .SearchBar_holder {
     padding: 0.5rem;
 
+    > Button {
+      background-color: variable.$jet;
+      color: variable.$white;
+      border-radius: 1rem;
+      padding: 1rem;
+      font-size: 1rem;
+    }
+
     .SearchBar_input {
       margin: 0.5rem;
+      padding: 1rem;
+      font-size: 1rem;
     }
   }
 }

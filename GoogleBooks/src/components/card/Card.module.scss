@@ -7,4 +7,22 @@
   background-color: variable.$goldFusion;
   max-width: 40%;
   justify-content: center;
+  border-radius: 1rem;
+  color: variable.$white;
+
+  .Card_TitleElement {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    > img {
+      height: 15rem;
+      border-radius: 0.2rem;
+      width: auto;
+    }
+
+    .Card_TitleElement_Byline {
+      margin: 1rem;
+    }
+  }
 }

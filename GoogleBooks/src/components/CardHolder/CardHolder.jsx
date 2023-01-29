@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../card/Card";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { fetchBooks } from "../../functions/helpers";
 import styles from "./CardHolder.module.scss";
 import coverPlaceHolder from "../../assets/book-cover-placeholder.png";
@@ -38,39 +38,35 @@ const CardHolder = ({ query = "" }) => {
         {loading ? (
           <p>Loading...</p>
         ) : books.length === 0 ? (
-          <p>No results</p>
+          <p>No results...</p>
         ) : (
           //didn't realise that this is the div that takes the flexwrap
           <div className={styles.CardHolder_loaded}>
-            {books.map(
-              (book, key) => (
-                console.log("I mapped", book.volumeInfo.authors),
-                (
-                  <Card
-                    title={
-                      book.volumeInfo.title
-                        ? book.volumeInfo.title
-                        : "No title Available"
-                    }
-                    author={
-                      book.volumeInfo.authors
-                        ? book.volumeInfo.authors.join(", ")
-                        : "No Authors Found"
-                    } //this is an array, so this just
-                    description={
-                      book.volumeInfo.description
-                        ? book.volumeInfo.description
-                        : "No description available"
-                    }
-                    image={
-                      book.volumeInfo.imageLinks
-                        ? book.volumeInfo.imageLinks.smallThumbnail
-                        : coverPlaceHolder
-                    }
-                  />
-                )
-              )
-            )}
+            {books.map((book) => (
+              <Card
+                title={
+                  book.volumeInfo.title
+                    ? book.volumeInfo.title
+                    : "No title Available"
+                }
+                author={
+                  //this is an array, so this just works
+                  book.volumeInfo.authors
+                    ? book.volumeInfo.authors.join(", ")
+                    : "No Authors Found"
+                }
+                description={
+                  book.volumeInfo.description
+                    ? book.volumeInfo.description
+                    : "No description available"
+                }
+                image={
+                  book.volumeInfo.imageLinks
+                    ? book.volumeInfo.imageLinks.smallThumbnail
+                    : coverPlaceHolder
+                }
+              />
+            ))}
           </div>
         )}
       </div>

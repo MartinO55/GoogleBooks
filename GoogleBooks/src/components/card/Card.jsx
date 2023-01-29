@@ -2,8 +2,6 @@ import React from "react";
 import styles from "./Card.module.scss";
 
 const Card = ({ title, author, description, image }) => {
-  //console.log(books);
-
   if (title === undefined) {
     return (
       <>
@@ -15,10 +13,14 @@ const Card = ({ title, author, description, image }) => {
       <>
         {
           <div className={styles.Card}>
-            <h3>{title}</h3>
-            <p>{author}</p>
+            <div className={styles.Card_TitleElement}>
+              <div className={styles.Card_TitleElement_Byline}>
+                <h3>{title}</h3>
+                <p>{author}</p>
+              </div>
+              <img src={image} />
+            </div>
             <p>{description}</p>
-            <img src={image} />
           </div>
         }
       </>
