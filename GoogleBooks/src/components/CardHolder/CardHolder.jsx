@@ -42,8 +42,9 @@ const CardHolder = ({ query = "" }) => {
         ) : (
           //didn't realise that this is the div that takes the flexwrap
           <div className={styles.CardHolder_loaded}>
-            {books.map((book) => (
+            {books.map((book, index) => (
               <Card
+                key={index}
                 title={
                   book.volumeInfo.title
                     ? book.volumeInfo.title
