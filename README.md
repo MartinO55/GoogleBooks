@@ -2,12 +2,7 @@
 
 ## Outline
 
-This project will require you to use both DOM manipulation and Asynchronous programming.
-The aim is for the user to be able to search for a book inside the Google Books database and to be able to get more details about a certain title.
-
-Okay, so we can either do this in react or in basic JS/HTML. I am tempted to just use basic JS, as doing it in React will require useState and UseEffect, which could be difficult in the time available, given we are working with Google and not our own back end. All the info requried by the MVP comes back in the request, so it is just select it and show it. It might actually be easier to do it in react though. Note to self on styling: try seeing if its possible to get the image provided to flip open 180 degrees like a book cover would on click
-
-The landing page needs a centered search bar that takes the query to the API and returns it. Following this, we need to display a flex of Cards showing the books that match. I feel like we can do this as an SPA, by moving the search bar up the screen on submit and displaying our grid in its place. you could also go to a new page while loading the results, but that might be annoying...
+This project has been completed as a single page application in react, with SASS used for styling. The application takes a search term in as a state and uses it as a query to the google books API, then returns 10 results and displays them in cards. the request code uses Async/Await to fetch the data, then returns various elements of the data to use in the generation of a card element. One of the more difficult/annoying aspects of this project was the tendancy of the API to occasionally not return some of the data, leaving it as undefined, which would cause the search algorithm to crash periodically. this was solved through the use of ternary operators in the card holder and the addition of some placeholders for the app to return of google fails. Styling was done using SASS modules, with a colour palette based on suggestions by chatGPT. One major issue with styling was the requirement to include the book description in the card eleemnt, as this description is a block of text of indeterminate size, ranging from non existant to several paragraphs in length, making the prospective card size incredibly variable.
 
 ## MVP
 
@@ -42,10 +37,3 @@ Application Design (required):
 
 - Give feedback to the user when no book results can be found for the query.
 - When a user clicks a book in the grid, a modal should appear with more book information, think about release, publish date, country, languages, etc.
-
-## Useful Resources
-
-- [Google Books API no Auth link](https://developers.google.com/books/docs/v1/using#WorkingVolumes)
-- [Using Async Await](https://dmitripavlutin.com/javascript-fetch-async-await/)
-- [Using Postman to Test APIs](https://www.blazemeter.com/blog/how-use-postman-test-apis)
-- [Download Postman](https://www.postman.com/downloads/)
