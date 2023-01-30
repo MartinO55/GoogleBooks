@@ -38,7 +38,7 @@ const CardHolder = ({ query = "" }) => {
         {loading ? (
           <p>Loading...</p>
         ) : books.length === 0 ? (
-          <p>No results...</p>
+          <p>No results.</p>
         ) : (
           //didn't realise that this is the div that takes the flexwrap
           <div className={styles.CardHolder_loaded}>
