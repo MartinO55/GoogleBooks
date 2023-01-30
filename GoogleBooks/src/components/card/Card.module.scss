@@ -25,4 +25,9 @@
       margin: 1rem;
     }
   }
+
+  &:hover {
+    background-color: variable.$goldFusion;
+    box-shadow: 0rem 0rem 3rem variable.$goldFusion;
+  }
 }
