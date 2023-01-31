@@ -12,13 +12,19 @@
 
   .Card_TitleElement {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; //add breakpoint to switch this to column
     justify-content: space-between;
+    @media only screen and (max-width: 850px) {
+      flex-direction: column;
+    }
 
     > img {
-      height: 15rem;
+      height: 15rem; //breakpoint to shrink image a bit too
       border-radius: 0.2rem;
       width: auto;
+      @media only screen and (max-width: 800px) {
+        height: 10rem;
+      }
     }
 
     .Card_TitleElement_Byline {
