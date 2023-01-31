@@ -8,8 +8,6 @@ This project has been completed as a single page application in react, with SASS
 
 Github Repository: <https://github.com/MartinO55/GoogleBooks>
 
-Live Site: <https://martino55.github.io/GoogleBooks/>
-
 ## MVP
 
 Create a page that allows users to search for books
