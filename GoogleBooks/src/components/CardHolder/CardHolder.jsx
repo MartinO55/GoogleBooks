@@ -14,7 +14,7 @@ const CardHolder = ({ query = "" }) => {
   useEffect(() => {
     setLoading(true);
 
-    fetchBooks(query)
+    fetchBooks(query) //add a .then cleanData() to handle the ternary logic in the return
       .then((response) => {
         if (!response) {
           console.log("could not fetch data");
