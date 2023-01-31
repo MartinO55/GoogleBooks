@@ -20,14 +20,13 @@ const CardHolder = ({ query = "" }) => {
           console.log("could not fetch data");
           return;
         }
-        console.log("books:", books);
+
         booksdata = response;
-        console.log(booksdata);
       })
       .catch((error) => console.log(error))
       .finally(() => {
         setBooks(booksdata);
-        console.log(booksdata);
+
         setLoading(false);
       });
   }, [query]);
