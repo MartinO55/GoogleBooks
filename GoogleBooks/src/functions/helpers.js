@@ -11,7 +11,8 @@ export const fetchBooks = async (query) => {
 
       return data.items;
     } catch (error) {
-      console.log(error);
+      console.log(error, " in fetch");
+      throw new Error("Unable to search for books");
     }
   }
 };
